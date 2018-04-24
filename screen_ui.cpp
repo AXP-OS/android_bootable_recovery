@@ -581,13 +581,6 @@ void ScreenRecoveryUI::draw_header_locked(int& y) {
   }
   y += v_unit;
 
-  // Draw logo
-  icon = logo_image;
-  icon_w = gr_get_width(icon);
-  icon_h = gr_get_height(icon);
-  icon_x = kMarginWidth + (gr_fb_width() - icon_w) / 2;
-  icon_y = y + ((v_unit * 4) - icon_h) / 2;
-  gr_blit(icon, 0, 0, icon_w, icon_h, icon_x, icon_y);
   y += v_unit * 4;
 
   y += v_unit * 1;  // Margin
@@ -906,7 +899,6 @@ bool ScreenRecoveryUI::Init(const std::string& locale) {
   // Set up the locale info.
   SetLocale(locale);
 
-  LoadBitmap("logo_image", &logo_image);
   LoadBitmap("ic_back", &ic_back);
   LoadBitmap("ic_back_sel", &ic_back_sel);
 

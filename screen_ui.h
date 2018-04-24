@@ -207,7 +207,6 @@ class ScreenRecoveryUI : public RecoveryUI {
   // The layout to use.
   int layout_;
 
-  GRSurface* logo_image;
   GRSurface* ic_back;
   GRSurface* ic_back_sel;
 
