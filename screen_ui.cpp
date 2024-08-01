@@ -339,7 +339,7 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
       gr_color(138, 135, 134, 255);
       break;
     case MENU_SEL_FG:
-      gr_color(0x16, 0x7c, 0x80, 255);
+      gr_color(0x03, 0xa9, 0xf4, 255);
       break;
     case LOG:
       gr_color(196, 196, 196, 255);
@@ -667,13 +667,13 @@ void ScreenRecoveryUI::draw_grid_menu_locked(int& y) {
       int icon_w = gr_get_width(icon);
       int icon_h = gr_get_height(icon);
       int icon_x = grid_x + (grid_w - icon_w) / 2;
-      int icon_y = grid_y + ((grid_h * 2 / 3) - icon_h) / 2;
+      int icon_y = grid_y + ((grid_h * 0.25) - icon_h) / 2;
       gr_blit(icon, 0, 0, icon_w, icon_h, icon_x, icon_y);
     }
     if (!item.text().empty()) {
       int text_w = item.text().size() * char_width_;
       int text_x = grid_x + (grid_w - text_w) / 2;
-      int text_y = grid_y + (grid_h * 2 / 3) + (char_height_ / 2);
+      int text_y = grid_y + (grid_h * 0.25) + (char_height_ / 2);
       SetColor(i == menu_sel ? MENU_SEL_FG : MENU);
       gr_text(gr_sys_font(), text_x, text_y, item.text().c_str(), false);
     }

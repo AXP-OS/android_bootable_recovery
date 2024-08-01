@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011 The Android Open Source Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019 The AXP.OS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,7 @@ RecoveryUI::RecoveryUI()
       boot_slot_ = std::string("Slot ") + &propval[1];
   }
   property_get("ro.lineage.version", propval, "(unknown)");
-  lineage_version_ = std::string("LineageOS ") + propval;
+  lineage_version_ = std::string("AXP.OS ") + propval;
 
   pthread_mutex_init(&event_queue_mutex, nullptr);
   pthread_cond_init(&event_queue_cond, nullptr);

@@ -59,7 +59,7 @@ class DumpPublicKey {
                                 pubexp.toString(10) + ".");
         }
 
-        if (modulus.bitLength() != 2048) {
+        if (modulus.bitLength() < 2048) {
              throw new Exception("Modulus should be 2048 bits long but is " +
                         modulus.bitLength() + " bits.");
         }
