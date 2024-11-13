@@ -590,15 +590,15 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
       break;
     case UIElement::INFO:
       if (fastbootd_logo_enabled_)
-        gr_color(0xfd, 0xd8, 0x35, 255);
+        gr_color(0x8b, 0xc3, 0x4a, 255);
       else
-        gr_color(0xf8, 0x90, 0xff, 255);
+        gr_color(0xff, 0x98, 0x00, 255);
       break;
     case UIElement::HEADER:
       if (fastbootd_logo_enabled_)
-        gr_color(0xfd, 0xd8,0x35, 255);
+        gr_color(0x8b, 0xc3, 0x4a, 255);
       else
-        gr_color(0xf8, 0x90, 0xff, 255);
+        gr_color(0xff, 0x98, 0x00, 255);
       break;
     case UIElement::MENU:
       gr_color(0xd8, 0xd8, 0xd8, 255);
@@ -606,9 +606,9 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
     case UIElement::MENU_SEL_BG:
     case UIElement::SCROLLBAR:
       if (fastbootd_logo_enabled_)
-        gr_color(0xe6, 0x51, 0x00, 255);
+        gr_color(0x4c, 0xaf, 0x50, 255);
       else
-        gr_color(0x7c, 0x4d, 0xff, 255);
+        gr_color(0xff, 0x57, 0x22, 255);
       break;
     case UIElement::MENU_SEL_BG_ACTIVE:
       gr_color(0, 156, 100, 255);
@@ -838,7 +838,6 @@ void ScreenRecoveryUI::draw_menu_and_text_buffer_locked(
     auto logo_width = gr_get_width(logo.get());
     auto logo_height = gr_get_height(logo.get());
     auto centered_x = ScreenWidth() / 2 - logo_width / 2;
-    DrawSurface(logo.get(), 0, 0, logo_width, logo_height, centered_x, y);
     y += logo_height;
 
     if (!menu_->IsMain()) {
